@@ -50,6 +50,7 @@ class Dashboard extends React.Component {
       onChange: this.onSelectChange
     };
     const hasSelected = selectedRowKeys.length > 0;
+    const collapsed = this.state.collapsed;
     return (
       <div>
         <Layout>
@@ -58,7 +59,7 @@ class Dashboard extends React.Component {
               width={200}
               trigger={null}
               collapsible
-              collapsed={this.state.collapsed}
+              collapsed={collapsed}
               style={{
                 boxShadow: "2px 0 6px rgba(0,21,41,.35)"
               }}
@@ -70,10 +71,11 @@ class Dashboard extends React.Component {
                   textAlign: "center",
                   padding: "8px 0",
                   fontSize: 20,
-                  color: "white"
+                  color: "white",
+                  fontFamily: "'Odibee Sans', cursive"
                 }}
               >
-                Home
+                {collapsed ? "S.C." : "Sweet Company"}
               </a>
               <Menu
                 mode="inline"
