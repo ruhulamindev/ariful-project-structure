@@ -1,6 +1,23 @@
 import React from "react";
 import axios from "axios";
-import { Layout, Menu, Breadcrumb, Icon, Table, Button, message } from "antd";
+import {
+  Layout,
+  Menu,
+  Icon,
+  Table,
+  Button,
+  Statistic,
+  Card,
+  Row,
+  Col
+} from "antd";
+
+import Result from "ant-design-pro/lib/Result";
+import "ant-design-pro/lib/Result/style/index.less";
+
+// The following will not work due to @tmp/history dependency on ant-design-pro
+// with the umi/dist/index.esm.js
+// import { Result } from "ant-design-pro";
 
 const { SubMenu } = Menu;
 const { Content, Sider, Header } = Layout;
@@ -126,7 +143,7 @@ class Dashboard extends React.Component {
                 </SubMenu>
               </Menu>
             </Sider>
-            <Layout style={{minHeight:"100vh"}}>
+            <Layout style={{ minHeight: "100vh" }}>
               <Header
                 style={{
                   background: "#fff",
@@ -152,6 +169,56 @@ class Dashboard extends React.Component {
                   minHeight: 280
                 }}
               >
+                <Result type="success" />
+                <Row gutter={24}>
+                  <Col span={8}>
+                    <Card title="Status">
+                      <Card.Grid hoverable={false} style={{ width: '50%', height: "100%"}}>
+                        <span>
+                          <Icon type="clock-circle" spin={true} />
+                          <span>
+                            <span>00:00:00</span>
+                            <span>time running</span>
+                          </span>
+                        </span>
+                        <span>
+                          <Icon type="clock-circle" theme="filled" />
+                          <span>
+                            <span>00:00:00</span>
+                            <span>until next run</span>
+                          </span>
+                        </span>
+                      </Card.Grid>
+                      <Card.Grid hoverable={false} style={{ width: '50%' , height: "100%"}}>
+                        <Icon type="info-circle" /> <span>running</span>
+                      </Card.Grid>
+                    </Card>
+                  </Col>
+                  <Col span={8}>
+                    <Card>
+                      <Statistic
+                        title="Idle"
+                        value={9.3}
+                        precision={2}
+                        valueStyle={{ color: "#cf1322" }}
+                        prefix={<Icon type="arrow-down" />}
+                        suffix="%"
+                      />
+                    </Card>
+                  </Col>
+                  <Col span={8}>
+                    <Card>
+                      <Statistic
+                        title="Idle"
+                        value={9.3}
+                        precision={2}
+                        valueStyle={{ color: "#cf1322" }}
+                        prefix={<Icon type="arrow-down" />}
+                        suffix="%"
+                      />
+                    </Card>
+                  </Col>
+                </Row>
                 <div style={{ marginBottom: 16 }}>
                   <span style={{ marginLeft: 8 }}>
                     {hasSelected
