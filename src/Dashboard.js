@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
                   fontFamily: "'Odibee Sans', cursive"
                 }}
               >
-                {collapsed ? "S.C." : "Sweet Company"}
+                {collapsed ? "CEA" : "Code Eating Ants"}
               </a>
               <Menu
                 mode="inline"
