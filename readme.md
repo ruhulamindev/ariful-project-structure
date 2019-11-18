@@ -1,6 +1,7 @@
 ## State
 
 File/Folder Structure:
+
 ```
 ➜  tree src
 src
@@ -11,6 +12,7 @@ src
 ```
 
 Complexity:
-http://i.imgur.com/7L6ZsUt.png
+
+![](http://i.imgur.com/7L6ZsUt.png)
 
 ## State After
